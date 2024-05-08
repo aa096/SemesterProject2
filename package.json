@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Semester Project 2, an auction site called Nobel Oak Auction",
   "scripts": {
-    "build": "sass src/scss:css",
+    "build": "sass src/scss:dist/css",
     "watch": "sass --watch src/scss:dist/css & live-server",
     "start": "npm run build && live-server",
     "prepare": "husky install",
