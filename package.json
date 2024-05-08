@@ -1,0 +1,27 @@
+{
+  "name": "SemesterProject2",
+  "version": "0.0.1",
+  "description": "Semester Project 2, an auction site called Nobel Oak Auction",
+  "scripts": {
+    "test": "",
+    "build": "sass src/scss:css",
+    "watch": "sass --watch src/scss:dist/css & live-server",
+    "start": "npm run build && live-server",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aa096/SemesterProject2"
+  },
+  "keywords": [],
+  "author": "aa096",
+  "homepage": "https://github.com/aa096/SemesterProject2#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "prettier": "^3.2.5",
+    "sass": "^1.77.0"
+  }
+}
