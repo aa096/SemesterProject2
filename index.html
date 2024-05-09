@@ -10,9 +10,9 @@
     ></script>
     <link rel="stylesheet" href="./dist/css/theme.css" />
   </head>
-  <body>
+  <body bg-primary>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
         <div class="container-fluid">
           <a class="navbar-brand smaller" href="index.html"
             ><img src="/images/NOLogo.png" alt="Noble Oak logo in white"
@@ -68,8 +68,10 @@
       <div id="newListings"></div>
     </main>
     <footer>
-      <div class="container col-8 col-sm-4 bg-secondary">
-        <h3>
+      <section
+        class="container col-10 col-md-9 bg-secondary p-4 rounded-4 text-center position-relative mb-n5"
+      >
+        <h3 class="pb-3 col-md-7 m-auto">
           Ready to showcase your prized possession on the Nobel Oak Auction?
         </h3>
         <button class="btn btn-primary text-uppercase">
@@ -78,6 +80,26 @@
         <button class="btn btn-secondary text-uppercase">
           Sell Items <i class="fa-solid fa-arrow-right"></i>
         </button>
+      </section>
+      <div class="container-expand bg-primary pt-5">
+        <div class="d-flex justify-content-center py-4">
+          <nav class="nav flex-column">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" href="#">Auctions</a>
+            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#">Log out</a>
+          </nav>
+          <div class="vertical-line"></div>
+          <div class="nav flex-column">
+            <i class="fa-brands fa-x-twitter nav-link py-2 fs-3"></i>
+            <i class="fa-brands fa-instagram nav-link py-2 fs-3"></i>
+            <i class="fa-brands fa-facebook nav-link py-2 fs-3"></i>
+          </div>
+        </div>
+        <div class="text-center pb-3">
+          <hr class="mx-5" />
+          © 2024 Nobel Oak Auctions
+        </div>
       </div>
     </footer>
   </body>

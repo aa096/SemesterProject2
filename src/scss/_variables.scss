@@ -385,7 +385,7 @@ $enable-cssgrid: false;
 $enable-button-pointers: true;
 $enable-rfs: true;
 $enable-validation-icons: true;
-$enable-negative-margins: false;
+$enable-negative-margins: true;
 $enable-deprecation-messages: true;
 $enable-important-utilities: true;
 
@@ -718,8 +718,8 @@ $hr-height: null; // Deprecated in v5.2.0
 // fusv-enable
 
 $hr-border-color: null; // Allows for inherited colors
-$hr-border-width: var(--#{$prefix}border-width);
-$hr-opacity: 0.25;
+$hr-border-width: 1.5px;
+$hr-opacity: 1;
 
 // scss-docs-start vr-variables
 $vr-border-width: var(--#{$prefix}border-width);
@@ -1214,12 +1214,12 @@ $zindex-levels: (
 // Navs
 
 // scss-docs-start nav-variables
-$nav-link-padding-y: 0.5rem;
+$nav-link-padding-y: 0.3rem;
 $nav-link-padding-x: 1rem;
-$nav-link-font-size: null;
+$nav-link-font-size: 17px;
 $nav-link-font-weight: null;
 $nav-link-color: var(--#{$prefix}link-color);
-$nav-link-hover-color: var(--#{$prefix}link-hover-color);
+$nav-link-hover-color: $secondary;
 $nav-link-transition:
   color 0.15s ease-in-out,
   background-color 0.15s ease-in-out,
@@ -1284,14 +1284,14 @@ $navbar-light-brand-hover-color: $navbar-light-active-color;
 
 // scss-docs-start navbar-dark-variables
 $navbar-dark-color: rgba($white, 0.55);
-$navbar-dark-hover-color: rgba($white, 0.75);
+$navbar-dark-hover-color: $secondary;
 $navbar-dark-active-color: $white;
 $navbar-dark-disabled-color: rgba($white, 0.25);
 $navbar-dark-icon-color: $navbar-dark-color;
 $navbar-dark-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-icon-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
 $navbar-dark-toggler-border-color: rgba($white, 0.1);
 $navbar-dark-brand-color: $navbar-dark-active-color;
-$navbar-dark-brand-hover-color: $navbar-dark-active-color;
+$navbar-dark-brand-hover-color: $secondary;
 // scss-docs-end navbar-dark-variables
 
 // Dropdowns
