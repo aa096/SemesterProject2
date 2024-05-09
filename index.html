@@ -4,17 +4,81 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/07deee6de3.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="./dist/css/theme.css" />
   </head>
   <body>
     <header>
-      <nav class="navbar bg-secondary">
-        <div class="container d-flex justify-content-center">
-          <a class="navbar-brand front" href="index.html">
-            <img src="/images/Logolarge.png" alt="CreativeShare" />
-          </a>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand smaller" href="index.html"
+            ><img src="/images/NOLogo.png" alt="Noble Oak logo in white"
+          /></a>
+          <button
+            class="navbar-toggler me-4"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarToggler"
+            aria-controls="navbarToggler"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul
+              class="navbar-nav container-fluid justify-content-evenly mb-2 mb-lg-0"
+            >
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-uppercase fs-5 navbar-override"
+                  aria-current="page"
+                  href="#"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-uppercase fs-5 text-light navbar-override"
+                  href="../profile/"
+                  >Auctions</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-uppercase fs-5 text-light navbar-override"
+                  id="logoutLink"
+                  href="/"
+                  >Sell</a
+                >
+              </li>
+            </ul>
+            <a href=""><i class="fa-solid fa-user fs-2 me-3"></i></a>
+          </div>
         </div>
       </nav>
     </header>
+    <main>
+      <section id="featured"></section>
+      <div id="lastChance"></div>
+      <section id="elegance"></section>
+      <div id="newListings"></div>
+    </main>
+    <footer>
+      <div class="container col-8 col-sm-4 bg-secondary">
+        <h3>
+          Ready to showcase your prized possession on the Nobel Oak Auction?
+        </h3>
+        <button class="btn btn-primary text-uppercase">
+          Sell Items <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <button class="btn btn-secondary text-uppercase">
+          Sell Items <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </footer>
   </body>
 </html>
