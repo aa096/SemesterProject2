@@ -307,9 +307,9 @@ $primary: #dbd7cb;
 $secondary: #b1ada1;
 $success: $green;
 $info: $cyan;
-$warning: $yellow;
+$warning: #8d887c;
 $danger: $red;
-$light: $gray-100;
+$light: $white;
 $dark: $gray-900;
 // scss-docs-end theme-color-variables
 
@@ -328,12 +328,12 @@ $theme-colors: (
 
 // scss-docs-start theme-text-variables
 $primary-text-emphasis: shade-color($primary, 60%);
-$secondary-text-emphasis: shade-color($secondary, 60%);
+$secondary-text-emphasis: $secondary;
 $success-text-emphasis: shade-color($success, 60%);
 $info-text-emphasis: shade-color($info, 60%);
 $warning-text-emphasis: shade-color($warning, 60%);
 $danger-text-emphasis: shade-color($danger, 60%);
-$light-text-emphasis: $gray-700;
+$light-text-emphasis: $secondary;
 $dark-text-emphasis: $gray-700;
 // scss-docs-end theme-text-variables
 
@@ -344,7 +344,7 @@ $success-bg-subtle: tint-color($success, 80%);
 $info-bg-subtle: tint-color($info, 80%);
 $warning-bg-subtle: tint-color($warning, 80%);
 $danger-bg-subtle: tint-color($danger, 80%);
-$light-bg-subtle: mix($gray-100, $white);
+$light-bg-subtle: $secondary;
 $dark-bg-subtle: $gray-400;
 // scss-docs-end theme-bg-subtle-variables
 
