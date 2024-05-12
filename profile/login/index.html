@@ -7,17 +7,16 @@
     <link rel="icon" type="image/x-icon" href="/images/Faviconnoa.png" />
     <script
       src="https://kit.fontawesome.com/07deee6de3.js"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../dist/css/theme.css" />
   </head>
   <body bg-primary>
     <header>
       <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
         <div class="container-fluid">
-          <a class="navbar-brand smaller" href="index.html"
-            ><img src="/images/NOLogo.png" alt="Noble Oak logo in white"
-          /></a>
+          <a class="navbar-brand smaller" href="index.html">
+            <img src="/images/NOLogo.png" alt="Noble Oak logo in white" />
+          </a>
           <button
             class="navbar-toggler me-4"
             type="button"
@@ -25,36 +24,34 @@
             data-bs-target="#navbarToggler"
             aria-controls="navbarToggler"
             aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarToggler">
             <ul
-              class="navbar-nav container-fluid justify-content-evenly mb-2 mb-lg-0"
-            >
+              class="navbar-nav container-fluid justify-content-evenly mb-2 mb-lg-0">
               <li class="nav-item">
                 <a
                   class="nav-link active text-uppercase fs-5 navbar-override"
                   aria-current="page"
-                  href="#"
-                  >Home</a
-                >
+                  href="#">
+                  Home
+                </a>
               </li>
               <li class="nav-item">
                 <a
                   class="nav-link text-uppercase fs-5 text-light navbar-override"
-                  href="../profile/"
-                  >Auctions</a
-                >
+                  href="../profile/">
+                  Auctions
+                </a>
               </li>
               <li class="nav-item">
                 <a
                   class="nav-link text-uppercase fs-5 text-light navbar-override"
                   id="logoutLink"
-                  href="/"
-                  >Sell</a
-                >
+                  href="/">
+                  Sell
+                </a>
               </li>
             </ul>
             <a href=""><i class="fa-solid fa-user fs-2 me-3"></i></a>
@@ -76,33 +73,30 @@
               id="Email"
               required
               pattern="^[\w\-.]+@stud\.noroff\.no$"
-              title="Only @stud.noroff.no domains are allowed to login"
-            />
+              title="Only @stud.noroff.no domains are allowed to login" />
           </div>
           <div class="mb-3">
-            <label for="Password" class="form-label text-secondary"
-              >Password</label
-            >
+            <label for="Password" class="form-label text-secondary">
+              Password
+            </label>
             <input
               type="password"
               name="password"
               class="form-control text-secondary rounded-3 border border-secondary bg-white"
               id="Password"
               required
-              minlength="8"
-            />
+              minlength="8" />
           </div>
           <div class="d-flex justify-content-evenly">
             <p class="text-secondary">Not a member?</p>
-            <a href="/profile/register/" class="text-secondary text-uppercase"
-              >Sign up Here</a
-            >
+            <a href="/profile/register/" class="text-secondary text-uppercase">
+              Sign up Here
+            </a>
           </div>
           <div class="text-center">
             <button
               type="submit"
-              class="btn btn-secondary text-light rounded-4"
-            >
+              class="btn btn-secondary text-light rounded-4">
               Log in
             </button>
           </div>
@@ -136,8 +130,7 @@
       id="errorModal"
       tabindex="-1"
       aria-labelledby="errorModalLabel"
-      aria-hidden="true"
-    >
+      aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -146,16 +139,14 @@
               type="button"
               class="btn-close"
               data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+              aria-label="Close"></button>
           </div>
           <div class="modal-body" id="errorModalBody"></div>
           <div class="modal-footer">
             <button
               type="button"
               class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
+              data-bs-dismiss="modal">
               Close
             </button>
           </div>
