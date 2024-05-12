@@ -1,9 +1,9 @@
-import { API_AUCTION_URL } from "../constants.mjs";
+import { API_AUCTION_URL, API_AUTH } from "../constants.mjs";
 import * as storage from "../../storage/index.mjs";
 import * as utils from "../../utils/index.mjs";
 
 const action = "/auth/login";
-const method = "post";
+const method = "POST";
 
 /**
  * Performs user login by sending a POST request to the authentication endpoint.
@@ -56,11 +56,11 @@ export async function login(profile) {
     }
     utils.hideLoadingIndicator();
 
-    const { accessToken, ...user } = await response.json();
+    const { accessToken, ...profile } = (await response.json()).data;
     storage.save("token", accessToken);
-    storage.save("profile", user);
+    storage.save("profile", profile);
 
-    window.location.href = "/";
+    // window.location.href = "/";
   } catch (error) {
     utils.hideLoadingIndicator();
     console.error("Login error:", error);

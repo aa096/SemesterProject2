@@ -11,6 +11,7 @@ export function setLoginFormListener() {
 
       try {
         await login(profile);
+        
       } catch (error) {
         console.error("Login error:", error);
       }

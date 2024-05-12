@@ -1,8 +1,10 @@
-import { API_AUCTION_URL } from "../constants.mjs";
+import { API_AUCTION_URL, API_AUTH } from "../constants.mjs";
 import * as utils from "../../utils/index.mjs"
+import { load } from "../../storage/index.mjs";
 
 const action = "/auth/register";
-const method = "post";
+const method = "POST";
+
 
 /**
  * Registers a new user by sending a POST request to the registration endpoint.
@@ -60,16 +62,16 @@ export async function register(profile) {
     }
     utils.hideLoadingIndicator();
 
-    redirectToLogin();
+    // redirectToLogin();
 
     const result = await response.json();
     return result;
   } catch (error) {
-    utilshideLoadingIndicator();
+    utils.hideLoadingIndicator();
     console.error("Registration error:", error);
   }
 }
 
-function redirectToLogin() {
-  window.location.href = "/";
-}
+// function redirectToLogin() {
+//   window.location.href = "/";
+// }
