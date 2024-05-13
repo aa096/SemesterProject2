@@ -1,37 +1,53 @@
-
-const createPostButton = document.querySelector("#createPostButton");
-const createPostForm = document.getElementById("createPost");
-const caretIcon = document.getElementById("caretIcon");
-
-if (createPostButton) {
-  createPostButton.addEventListener("click", function () {
-    createPostForm.classList.toggle("hidden");
-
-    caretIcon.classList.toggle("fa-caret-up");
-    caretIcon.classList.toggle("fa-caret-down");
-  });
-}
-
 const container1 = document.querySelector("#post-container");
 
 export function listingsTemplate(item) {
     const divWrapper = document.createElement("div");
-    divWrapper.classList.add("col-10");
+    divWrapper.classList.add("col-10", "text-center", "text-secondary");
 
     const listingsCard = document.createElement("div");
     listingsCard.classList.add("card");
 
-    const image = document.createElement("img");
-    image.src = item.media;
-    image.alt = item.title;
+    const idLink = document.createElement("a");
+    idLink.href = "/auction/?id=" + item.id;
 
+    if (item.media && item.media.length > 0) {
+        const image = document.createElement("img");
+        image.src = item.media[0].url || ""; 
+        image.alt = item.media[0].alt || ""; 
+        listingsCard.appendChild(image);
+    }
+
+    const listingTitle = document.createElement("p");
+    listingTitle.textContent = item.title;
+    listingTitle.classList.add("text-secondary");
+
+    const endsAtDate = new Date(item.endsAt);
+    const formattedDate = endsAtDate.toLocaleDateString("en-US", {
+        day: "2-digit",
+        month: "short" 
+         
+    });
+
+    const listingInfo = document.createElement("p");
+    listingInfo.textContent = `Ends at ${formattedDate} | ${item._count.bids} Bids`;
+    listingInfo.classList.add("text-secondary");
+
+    idLink.appendChild(listingsCard);
+    listingsCard.appendChild(listingTitle);
+    listingsCard.appendChild(listingInfo);
+    divWrapper.appendChild(idLink);  
 
   return divWrapper;
 }
 
-export function renderListingsTemplates(item) {
-  container1.innerHTML = "";
-  items.forEach((item) => {
-    container1.appendChild(listingsTemplate(item));
-  });
+export function renderListingsTemplates(items) {
+    const dataList = items?.data ?? [];
+
+    container1.innerHTML = "";
+
+    dataList.forEach((item) => {
+        container1.appendChild(listingsTemplate(item));
+    });
 }
+
+  

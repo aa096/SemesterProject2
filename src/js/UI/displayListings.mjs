@@ -4,7 +4,7 @@ import * as listings from "../auctions/index.mjs"
 
 export async function showListings() {
     try {
-      const posts = await listings.getListings();
+      const item = await listings.getListings();
       templates.renderListingsTemplates(item);
     } catch (error) {
       utils.showError(error.message, "#post-container");
