@@ -1,4 +1,5 @@
 import * as listners from "./handlers/index.mjs";
+import * as UI from "./UI/index.mjs"
 
 export function router() {
   const path = location.pathname;
@@ -20,11 +21,9 @@ export function router() {
     // case "/profile/edit/":
     //   listners.setUpdateProfileFormListener();
     //   return;
-    // case "/posts/":
-    //   listners.setCreatePostFormListener();
-    //   showPosts();
-    //   listners.handleFilterOption();
-    //   return;
+    case "/auctions/":
+      UI.showListings();
+      return;
     // case "/profile/":
     //   showProfile();
     //   return;
