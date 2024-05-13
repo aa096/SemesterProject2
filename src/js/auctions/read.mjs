@@ -1,7 +1,7 @@
 import { API_AUCTION_URL, API_KEY } from "../api/constants.mjs";
 import { authFetch } from "../api/authFetch.mjs";
 import * as utils from "../utils/index.mjs"
-import { load } from "../storage/index.mjs";
+import { headers } from "../api/headers.mjs";
 
 const action = "/auction/listings";
 
@@ -12,10 +12,6 @@ export async function getListings() {
       const getListingsURL = `${API_AUCTION_URL}${action}`;
   
       const response = await authFetch(getListingsURL, {
-        headers: {
-          Authorization: `Bearer ${load("token")}`,
-          "X-Noroff-API-key": API_KEY
-        }
       });
   
       if (!response.ok) {

@@ -1,6 +1,8 @@
 import { API_AUCTION_URL, API_AUTH } from "../constants.mjs";
 import * as storage from "../../storage/index.mjs";
 import * as utils from "../../utils/index.mjs";
+import { headers } from "../headers.mjs";
+import { authFetch } from "../authFetch.mjs";
 
 const action = "/auth/login";
 const method = "POST";
@@ -35,10 +37,7 @@ export async function login(profile) {
   try {
     utils.showLoadingIndicator();
 
-    const response = await fetch(loginURL, {
-      headers: {
-        "Content-Type": "application/json",
-      },
+    const response = await authFetch(loginURL, {
       method,
       body,
     });

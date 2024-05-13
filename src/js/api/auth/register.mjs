@@ -1,6 +1,7 @@
 import { API_AUCTION_URL, API_AUTH } from "../constants.mjs";
 import * as utils from "../../utils/index.mjs"
 import { load } from "../../storage/index.mjs";
+import { authFetch } from "../authFetch.mjs";
 
 const action = "/auth/register";
 const method = "POST";
@@ -39,10 +40,7 @@ export async function register(profile) {
   try {
     utils.showLoadingIndicator();
 
-    const response = await fetch(registerURL, {
-      headers: {
-        "Content-Type": "application/json",
-      },
+    const response = await authFetch(registerURL, {
       method,
       body,
     });
@@ -62,7 +60,7 @@ export async function register(profile) {
     }
     utils.hideLoadingIndicator();
 
-    // redirectToLogin();
+    redirectToLogin();
 
     const result = await response.json();
     return result;
@@ -72,6 +70,6 @@ export async function register(profile) {
   }
 }
 
-// function redirectToLogin() {
-//   window.location.href = "/";
-// }
+function redirectToLogin() {
+  window.location.href = "/profile/login/";
+}
