@@ -2,10 +2,10 @@ const container1 = document.querySelector("#post-container");
 
 export function listingsTemplate(item) {
     const divWrapper = document.createElement("div");
-    divWrapper.classList.add("col-10", "text-center", "text-secondary");
+    divWrapper.classList.add("col-sm", "text-center", "text-secondary");
 
     const listingsCard = document.createElement("div");
-    listingsCard.classList.add("card");
+    listingsCard.classList.add("text-center", "photo");
 
     const idLink = document.createElement("a");
     idLink.href = "/auction/?id=" + item.id;
@@ -14,6 +14,7 @@ export function listingsTemplate(item) {
         const image = document.createElement("img");
         image.src = item.media[0].url || ""; 
         image.alt = item.media[0].alt || ""; 
+        image.classList.add("card-img-top", "object-fit-cover");
         listingsCard.appendChild(image);
     }
 
@@ -25,11 +26,13 @@ export function listingsTemplate(item) {
     const formattedDate = endsAtDate.toLocaleDateString("en-US", {
         day: "2-digit",
         month: "short" 
-         
     });
 
+    const bidsCount = item._count && item._count.bids ? item._count.bids : 0;
+    const bidsText = bidsCount === 1 ? "Bid" : "Bids";
+
     const listingInfo = document.createElement("p");
-    listingInfo.textContent = `Ends at ${formattedDate} | ${item._count.bids} Bids`;
+    listingInfo.textContent = `Ends at ${formattedDate} | ${bidsCount} ${bidsText}`;
     listingInfo.classList.add("text-secondary");
 
     idLink.appendChild(listingsCard);
