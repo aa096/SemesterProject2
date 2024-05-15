@@ -52,9 +52,22 @@
   object-position: 50% 50%;
 }
 
+.avatar img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
 .customI {
   bottom: 5px;
   right: 60px;
+}
+
+.error {
+  color: #b1ada1;
+  text-align: center;
 }
 
 .loader-div {
