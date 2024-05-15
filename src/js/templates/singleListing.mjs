@@ -1,21 +1,19 @@
 import { load } from "../storage/load.mjs";
-import { formatDate } from "../utils/formatDate.mjs";
+import { formatDate, formatDateAndTime } from "../utils/formatDate.mjs";
+import { bidHistoryTemplate } from "./bidHistoryTemp.mjs";
 
 const parentContainer = document.querySelector("#auction");
 
 export function listingTemplate(item) {
-  const profile = load("profile");
-  const isOwner = profile && item.data.seller.email === profile.email;
-
-  const heading = document.createElement("h1");
+const heading = document.createElement("h1");
   heading.classList.add("text-secondary", "text-center", "my-5");
   heading.textContent = item.data.title;
 
   const listingContainer = document.createElement("div");
-  listingContainer.classList.add("container", "col-10", "bg-secondary", "mb-4");
+  listingContainer.classList.add("container", "col-10", "bg-secondary", "mb-4", "pb-4");
 
   const contentContainer = document.createElement("div");
-  contentContainer.classList.add("d-flex", "flex-wrap", "flex-lg-nowrap","customImage");
+  contentContainer.classList.add("d-flex", "flex-wrap", "flex-lg-nowrap","customImage", "justify-content-center");
 
   if (item.data.media && item.data.media[0]) {
     const img = document.createElement("img");
@@ -29,7 +27,7 @@ export function listingTemplate(item) {
   infoContainer.classList.add("d-flex", "flex-column");
 
   const bidsInfoContainer = document.createElement("div");
-  bidsInfoContainer.classList.add("d-flex", "gap-3", "mt-4", "mx-auto", "ms-lg-1","mx-xl-auto");
+  bidsInfoContainer.classList.add("d-flex",  "gap-3", "mt-4", "mx-auto","mx-xl-auto", "px-4");
  
   const coinIcon = document.createElement("i");
   coinIcon.classList.add("fa-solid", "fa-coins", "fs-3");
@@ -55,7 +53,7 @@ export function listingTemplate(item) {
   bidsInfoContainer.appendChild(endDateInfo);
 
   const description = document.createElement("p");
-  description.classList.add("col-10", "mx-auto", "mt-3");
+  description.classList.add("mx-auto","px-5", "mt-3");
   description.textContent = item.data.description;
 
 const dropdownContainer = document.createElement("div");
@@ -115,16 +113,23 @@ if (item.data.seller.avatar) {
     createdByDiv.appendChild(avatarIcon);
   }
 
-  
+  const heading2 = document.createElement("h2");
+  heading2.classList.add("text-center", "my-4");
+  heading2.textContent = "Bidding History";
+
+  const historySection = bidHistoryTemplate(item);
 
 
   infoContainer.appendChild(bidsInfoContainer);
   infoContainer.appendChild(description);
   infoContainer.appendChild(dropdownContainer);
   infoContainer.appendChild(createdByDiv);
+ 
 
   contentContainer.appendChild(infoContainer);
   listingContainer.appendChild(contentContainer);
+  listingContainer.appendChild(heading2);
+  listingContainer.appendChild(historySection); 
 
   parentContainer.appendChild(heading);
   parentContainer.appendChild(listingContainer);
