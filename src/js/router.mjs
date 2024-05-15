@@ -11,9 +11,9 @@ export function router() {
     case "/profile/register/":
       listners.setRegisterFormListener();
       return;
-    // case "/post/create/":
-    //   listners.setCreatePostFormListener();
-    //   return;
+    case "/auction/create/":
+      listners.setCreateListingFormListener();
+      return;
     // case "/post/edit/":
     //   listners.setUpdatePostFormListener();
     //   listners.setupGoBack();
@@ -27,8 +27,8 @@ export function router() {
     case "/auction/":
         UI.displaySingleListing();
         return;
-    // case "/profile/":
-    //   showProfile();
-    //   return;
+    case "/profile/":
+      UI.showProfile();
+      return;
   }
 }
