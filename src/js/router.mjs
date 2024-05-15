@@ -24,6 +24,9 @@ export function router() {
     case "/auctions/":
       UI.showListings();
       return;
+    case "/auction/":
+        UI.displaySingleListing();
+        return;
     // case "/profile/":
     //   showProfile();
     //   return;
