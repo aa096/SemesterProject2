@@ -52,21 +52,34 @@
       </nav>
     </header>
     <main>
-      <section class="container col-10" id="ongoing">
-        <h1 class="text-center text-secondary">Ongoing Auctions</h1>
-        <form>
-          <input class="form-control me-1" type="text" aria-label="Search" id="searchPosts" />
-          <button class="btn btn-primary" type="submit" id="searchBtn">
-            <i class="fa-solid fa-magnifying-glass"></i>
+      <section class="container col-10">
+        <h1 class="text-center text-secondary my-4">Ongoing Auctions</h1>
+        <div class="d-flex justify-content-between pb-5 flex-wrap gap-3">
+          <form>
+            <input
+              class="form-control-sm border border-secondary rounded-3 p-2 m-auto"
+              type="text"
+              aria-label="Search"
+              id="searchPosts" />
+            <button class="btn btn-secondary bg-white text-secondary rounded-3" type="submit" id="searchBtn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+          <button id="createPostButton" class="btn text-secondary border bg-white border-secondary text-uppercase">
+            Sell Item <i class="fa-solid fa-caret-down" id="caretIcon"></i>
           </button>
-        </form>
-        <label for="sortOptions" class="error mt-2">Sort by:</label>
-        <select class="select text-center ps-2" id="sortOptions" aria-expanded="false">
-          <option value="newestPosts">Newest Posts</option>
-          <option value="oldestPosts">Oldest Posts</option>
-          <option value="withImage">Posts with Image</option>
-        </select>
-        <div id="post-container"></div>
+          <select
+            class="select text-center text-secondary px-2 py-1 bg-white rounded-3 border border-secondary"
+            id="sortOptions"
+            aria-expanded="false">
+            <option selected>Sort by:</option>
+            <option value="newestListings">Newest Listings</option>
+            <option value="oldestListings">Oldest Listings</option>
+            <option value="highestBids">Highest Bids</option>
+            <option value="lowestBids">Lowest Bids</option>
+          </select>
+        </div>
+        <div id="post-container" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4"></div>
       </section>
     </main>
     <footer>
