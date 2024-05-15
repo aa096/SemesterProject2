@@ -1,6 +1,6 @@
-import { load } from "../storage/load.mjs";
-import { formatDate, formatDateAndTime } from "../utils/formatDate.mjs";
+import { formatDate } from "../utils/formatDate.mjs";
 import { bidHistoryTemplate } from "./bidHistoryTemp.mjs";
+import { editIfOwner } from "./editIfOwner.mjs";
 
 const parentContainer = document.querySelector("#auction");
 
@@ -93,6 +93,8 @@ dropdownContainer.appendChild(submitButton);
 const createdByDiv = document.createElement("div");
 createdByDiv.classList.add("d-flex", "customAvatar", "position-relative", "my-4", "me-4" );
 
+// const editBtn = editIfOwner(item);
+
 const formattedCreatedDate = formatDate(item.data.created);
 
 const createdByText = document.createElement("p");
@@ -100,6 +102,7 @@ createdByText.classList.add("col-4", "mx-auto", "mt-4");
 createdByText.textContent = `Created by ${item.data.seller.name} on ${formattedCreatedDate}`;
 
 createdByDiv.appendChild(createdByText);
+// createdByDiv.appendChild(editBtn);
 
 if (item.data.seller.avatar) {
     const imgAvatar = document.createElement("img");
