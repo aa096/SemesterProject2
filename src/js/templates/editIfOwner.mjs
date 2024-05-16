@@ -7,7 +7,7 @@ export function editIfOwner(item) {
 
   if (isOwner) {
     const editPostButton = createButton("Edit", "fa-pen-to-square", () => {
-      window.location.href = `/auction/?id=${item.data.id}`;
+      window.location.href = `/auction/edit/?id=${item.data.id}`;
     });
 
     const deletePostButton = createButton("Delete", "fa-trash", async () => {
@@ -19,8 +19,8 @@ export function editIfOwner(item) {
       const confirmationButton = document.getElementById("confirmDeleteButton");
       confirmationButton.addEventListener("click", async () => {
         try {
-          await removeListing(item.data.id); // Call your removeListing function
-          window.location.href = "/auctions/"; // Redirect to desired location after deletion
+          await removeListing(item.data.id); 
+          window.location.href = "/auctions"; 
         } catch (error) {
           console.error("Error deleting listing", error);
         } finally {

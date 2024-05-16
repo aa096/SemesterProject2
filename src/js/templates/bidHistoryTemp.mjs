@@ -4,7 +4,7 @@ export function bidHistoryTemplate(item) {
   const historyDiv = document.createElement("div");
   historyDiv.classList.add("bg-white", "rounded-4", "col-10", "mx-auto", "p-4", "history");
 
-  if (item.data && Array.isArray(item.data.bids)) {
+  if (item.data && Array.isArray(item.data.bids) && item.data.bids.length > 0) {
     item.data.bids.forEach((bid, index) => {
       const bidderAvatar = document.createElement("img");
       if (bid.bidder && bid.bidder.avatar) {
@@ -56,6 +56,11 @@ export function bidHistoryTemplate(item) {
         }
       }
     });
+  } else {
+    const noBidsMessage = document.createElement("p");
+    noBidsMessage.classList.add("text-secondary", "text-center", "my-3");
+    noBidsMessage.textContent = "No Bids Placed";
+    historyDiv.appendChild(noBidsMessage);
   }
 
   return historyDiv;

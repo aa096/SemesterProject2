@@ -52,7 +52,14 @@ export function activeListingsTemplate(profile) {
         historyDiv.appendChild(hr);
       }
     });
-  }
 
-  return historyDiv;
-}
+    } else {
+        const noListingsText = document.createElement("p");
+        noListingsText.classList.add("text-secondary", "my-3");
+        noListingsText.textContent = "Start your auction journey by listing an item";
+
+        historyDiv.appendChild(noListingsText);
+    }
+
+    return historyDiv;
+    }
