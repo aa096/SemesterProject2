@@ -14,7 +14,7 @@ export function router() {
     case "/auction/create/":
       listners.setCreateListingFormListener();
       return;
-    // case "/post/edit/":
+    // case "/auction/edit/":
     //   listners.setUpdatePostFormListener();
     //   listners.setupGoBack();
     //   return;
@@ -23,6 +23,7 @@ export function router() {
     //   return;
     case "/auctions/":
       UI.showListings();
+      listners.handleCreateListingButtonClick()
       return;
     case "/auction/":
         UI.displaySingleListing();

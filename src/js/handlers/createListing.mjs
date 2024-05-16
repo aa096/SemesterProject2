@@ -10,8 +10,8 @@ export function setCreateListingFormListener() {
       const formData = new FormData(form);
       const listing = Object.fromEntries(formData.entries());
     
-      const mediaUrl = formData.get("media");
-    const mediaAlt = formData.get("mediaAlt") || ""; 
+      const mediaUrl = formData.get("mediaUrl");
+      const mediaAlt = formData.get("mediaAlt") || ""; 
 
         const mediaObject = {
           url: mediaUrl,
