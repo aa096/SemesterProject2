@@ -9,8 +9,25 @@ export function setCreateListingFormListener() {
       const form = event.target;
       const formData = new FormData(form);
       const listing = Object.fromEntries(formData.entries());
+    
+      const mediaUrl = formData.get("media");
+    const mediaAlt = formData.get("mediaAlt") || ""; 
 
-      createListing(listing);
+        const mediaObject = {
+          url: mediaUrl,
+          alt: mediaAlt
+        };
+
+      const payload = {
+        title: formData.get("title"),
+        description: formData.get("description"),
+        media: [mediaObject],
+        endsAt: new Date(formData.get ("deadlineDate")).toISOString()
+      }
+
+      console.log('Payload:', payload);
+
+      createListing(payload);
     });
   }
 }
