@@ -9,6 +9,11 @@ export function activeListingsTemplate(profile) {
       const listingsRow = document.createElement("div");
       listingsRow.classList.add("d-flex", "align-items-center", "mb-3", "flex-column", "flex-md-row", "justify-content-between", "gap-2");
 
+      const idLink = document.createElement("a");
+      idLink.href = "/auction/?id=" + listing.id;
+      idLink.appendChild(listingsRow);
+  
+
       const listingImg = document.createElement("img");
       if (listing.media && Array.isArray(listing.media) && listing.media.length > 0) {
         listingImg.src = listing.media[0].url; 
@@ -39,7 +44,7 @@ export function activeListingsTemplate(profile) {
 
       listingsRow.appendChild(clockCreatedAtContainer);
 
-      historyDiv.appendChild(listingsRow);
+      historyDiv.appendChild(idLink);
 
       if (index < profile.data.listings.length - 1) {
         const hr = document.createElement("hr");
