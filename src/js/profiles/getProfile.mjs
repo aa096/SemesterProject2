@@ -34,7 +34,7 @@ export async function getProfile(profileData) {
       throw new Error("Get requires a name");
     }
 
-    const getProfileURL = `${API_AUCTION_URL}${action}/${profileData.name}`;
+    const getProfileURL = `${API_AUCTION_URL}${action}/${profileData.name}?_listings=true`;
 
     const response = await authFetch(getProfileURL);
     utils.hideLoadingIndicator();

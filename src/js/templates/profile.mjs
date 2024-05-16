@@ -1,3 +1,5 @@
+import { activeListingsTemplate } from "./activeListings.mjs";
+
 const parentContainer = document.getElementById("profileContainer");
 
 export function profileTemplate(profile) {
@@ -47,12 +49,15 @@ export function profileTemplate(profile) {
     description.classList.add("mx-auto", "mt-3");
     description.textContent = profile.data.bio;
 
+    const historyDiv = activeListingsTemplate(profile);
+
     infoContainer.appendChild(bidsInfoContainer);
     infoContainer.appendChild(description);
 
     contentContainer.appendChild(infoContainer);
 
     listingContainer.appendChild(contentContainer);
+    listingContainer.appendChild(historyDiv);
 
     parentContainer.appendChild(heading);
     parentContainer.appendChild(topContainer);
