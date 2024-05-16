@@ -13,11 +13,12 @@ export function router() {
       return;
     case "/auction/create/":
       listners.setCreateListingFormListener();
+      listners.setupGoBack();
       return;
-    // case "/auction/edit/":
-    //   listners.setUpdatePostFormListener();
-    //   listners.setupGoBack();
-    //   return;
+    case "/auction/edit/":
+      listners.setUpdateListingFormListener();
+      listners.setupGoBack();
+      return;
     // case "/profile/edit/":
     //   listners.setUpdateProfileFormListener();
     //   return;
