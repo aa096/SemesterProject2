@@ -1,8 +1,8 @@
 import { API_AUCTION_URL } from "../api/constants.mjs";
 import { authFetch } from "../api/authFetch.mjs";
 
-const action = "/auctions";
-const method = "put";
+const action = "/auction/listings";
+const method = "PUT";
 
 export async function updateListing(listingsData) {
   if (!listingsData.id) {
@@ -13,7 +13,7 @@ export async function updateListing(listingsData) {
 
   const response = await authFetch(updateListingURL, {
     method,
-    body: JSON.stringify(listingsDataData),
+    body: JSON.stringify(listingsData),
   });
 
   return await response.json();
