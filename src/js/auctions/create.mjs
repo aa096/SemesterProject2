@@ -18,7 +18,7 @@ export async function createListing(listingData) {
   if (response.ok) {
     window.location.reload();
   } else {
-    console.error("Error creating post:", responseData.error);
+    console.error("Error creating listing:", responseData.error);
   }
 
   return responseData;

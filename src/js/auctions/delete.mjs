@@ -1,8 +1,8 @@
 import { API_AUCTION_URL } from "../api/constants.mjs";
 import { authFetch } from "../api/authFetch.mjs";
 
-const action = "/auctions";
-const method = "delete";
+const action = "/auction/listings";
+const method = "DELETE";
 
 
 export async function removeListing(id) {

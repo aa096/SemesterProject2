@@ -25,8 +25,6 @@ export function setCreateListingFormListener() {
         endsAt: new Date(formData.get ("deadlineDate")).toISOString()
       }
 
-      console.log('Payload:', payload);
-
       createListing(payload);
     });
   }
