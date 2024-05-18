@@ -19,9 +19,10 @@ export function router() {
       listners.setUpdateListingFormListener();
       listners.setupGoBack();
       return;
-    // case "/profile/edit/":
-    //   listners.setUpdateProfileFormListener();
-    //   return;
+    case "/profile/edit/":
+      listners.setUpdateProfileFormListener();
+      listners.setupGoBack();
+      return;
     case "/auctions/":
       UI.showListings();
       listners.handleCreateListingButtonClick()
