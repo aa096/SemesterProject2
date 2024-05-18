@@ -70,6 +70,10 @@
   text-align: center;
 }
 
+.form-control:disabled {
+  cursor: not-allowed;
+}
+
 .loader-div {
   display: flex;
   justify-content: center;
