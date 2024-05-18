@@ -8,7 +8,7 @@ export async function getListings() {
     try {
       utils.showLoadingIndicator();
   
-      const getListingsURL = `${API_AUCTION_URL}${action}?page=1&limit=100&sort=title&sortOrder=asc`;
+      const getListingsURL = `${API_AUCTION_URL}${action}?page=1&limit=100&sort=created&sortOrder=desc`;
   
       const response = await authFetch(getListingsURL, {
       });

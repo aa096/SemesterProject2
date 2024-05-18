@@ -18,27 +18,27 @@ export function listingsTemplate(item) {
         image.alt = item.media[0].alt || ""; 
         image.classList.add("card-img-top", "object-fit-cover");
         listingsCard.appendChild(image);
+
+        const listingTitle = document.createElement("p");
+        listingTitle.textContent = item.title;
+        listingTitle.classList.add("text-secondary");
+
+        const formattedEndDate = formatDate(item.endsAt);
+
+        const bidsCount = item._count && item._count.bids ? item._count.bids : 0;
+        const bidsText = bidsCount === 1 ? "Bid" : "Bids";
+
+        const listingInfo = document.createElement("p");
+        listingInfo.textContent = `Ends at ${formattedEndDate} | ${bidsCount} ${bidsText}`;
+        listingInfo.classList.add("text-secondary");
+
+        idLink.appendChild(listingsCard);
+        listingsCard.appendChild(listingTitle);
+        listingsCard.appendChild(listingInfo);
+        divWrapper.appendChild(idLink);  
     }
 
-    const listingTitle = document.createElement("p");
-    listingTitle.textContent = item.title;
-    listingTitle.classList.add("text-secondary");
-
-    const formattedEndDate = formatDate(item.endsAt);
-
-    const bidsCount = item._count && item._count.bids ? item._count.bids : 0;
-    const bidsText = bidsCount === 1 ? "Bid" : "Bids";
-
-    const listingInfo = document.createElement("p");
-    listingInfo.textContent = `Ends at ${formattedEndDate} | ${bidsCount} ${bidsText}`;
-    listingInfo.classList.add("text-secondary");
-
-    idLink.appendChild(listingsCard);
-    listingsCard.appendChild(listingTitle);
-    listingsCard.appendChild(listingInfo);
-    divWrapper.appendChild(idLink);  
-
-  return divWrapper;
+    return divWrapper;
 }
 
 export function renderListingsTemplates(items) {
@@ -46,9 +46,9 @@ export function renderListingsTemplates(items) {
 
     container1.innerHTML = "";
 
-    dataList.forEach((item) => {
-        container1.appendChild(listingsTemplate(item));
-    });
+    dataList
+        .filter(item => item.media && item.media.length > 0) 
+        .forEach((item) => {
+            container1.appendChild(listingsTemplate(item));
+        });
 }
-
-  

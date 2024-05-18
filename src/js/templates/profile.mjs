@@ -21,7 +21,7 @@ export function profileTemplate(profile) {
     topContainer.appendChild(profileBanner);
 
     const contentContainer = document.createElement("div");
-    contentContainer.classList.add("d-flex", "flex-wrap", "avatar");
+    contentContainer.classList.add("d-flex", "flex-wrap", "flex-lg-nowrap", "align-items-center", "avatar");
 
     const img = document.createElement("img");
     img.src = profile.data.avatar.url;
@@ -30,11 +30,14 @@ export function profileTemplate(profile) {
     contentContainer.appendChild(img);
 
     const infoContainer = document.createElement("div");
-    infoContainer.classList.add("d-flex", "flex-column", "align-items-center");
+    infoContainer.classList.add("d-flex", "align-items-center", "flex-column");
 
    const editBtn = document.createElement("button");
    editBtn.classList.add("btn", "btn-light", "text-secondary", "fw-bolder", "rounded-4");
-   editBtn.textContent = "Edit Profile"
+   editBtn.textContent = "Edit Profile";
+   editBtn.addEventListener("click", () => {
+    window.location.href = "/profile/edit";
+    });
 
     const bidsInfoContainer = document.createElement("div");
     bidsInfoContainer.classList.add("d-flex", "ms-4", "gap-3", "mt-3");
@@ -50,7 +53,7 @@ export function profileTemplate(profile) {
     bidsInfoContainer.appendChild(credits);
 
     const description = document.createElement("p");
-    description.classList.add("mx-auto", "mt-3", "col-8");
+    description.classList.add("mx-auto", "mt-3", "col-8", "col-lg-5");
     description.textContent = profile.data.bio;
 
     const historyDiv = activeListingsTemplate(profile);

@@ -33,5 +33,8 @@ export function router() {
     case "/profile/":
       UI.showProfile();
       return;
+    case "/":
+      UI.displayIndexTemplate();
+      return;
   }
 }
