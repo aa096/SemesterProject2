@@ -1,6 +1,7 @@
 import { formatDate } from "../utils/formatDate.mjs";
 import { bidHistoryTemplate } from "./bidHistoryTemp.mjs";
 import { editIfOwner } from "./editIfOwner.mjs";
+import { postBid } from "../auctions/postBid.mjs";
 
 const parentContainer = document.querySelector("#auction");
 
@@ -47,7 +48,6 @@ export function listingTemplate(item) {
   const endDateInfo = document.createElement("p");
   endDateInfo.textContent = formattedEndDate;
 
-
   bidsInfoContainer.appendChild(coinIcon);
   bidsInfoContainer.appendChild(bidsInfo);
   bidsInfoContainer.appendChild(clockIcon);
@@ -70,6 +70,8 @@ export function listingTemplate(item) {
   const dropdownMenu = document.createElement("ul");
   dropdownMenu.classList.add("dropdown-menu");
 
+  let selectedBidAmount = highestBid + 1;  // Default to the first bid option
+
   const nextBidOptions = [highestBid + 1, highestBid + 5, highestBid + 10];
 
   nextBidOptions.forEach((bidAmount) => {
@@ -78,6 +80,13 @@ export function listingTemplate(item) {
     menuItemLink.classList.add("dropdown-item", "text-secondary");
     menuItemLink.setAttribute("href", "#");
     menuItemLink.textContent = `Next Bid: ${bidAmount} Credits`;
+
+    menuItemLink.addEventListener("click", (event) => {
+      event.preventDefault();
+      selectedBidAmount = bidAmount;
+      dropdownToggle.textContent = `Next Bid: ${bidAmount} Credits`;
+    });
+
     menuItem.appendChild(menuItemLink);
     dropdownMenu.appendChild(menuItem);
   });
@@ -86,6 +95,17 @@ export function listingTemplate(item) {
   submitButton.classList.add("btn", "btn-secondary", "text-white", "border", "rounded-end-4");
   submitButton.setAttribute("type", "button");
   submitButton.textContent = "Submit";
+
+  submitButton.addEventListener("click", async () => {
+    try {
+      const bid = { amount: selectedBidAmount };
+      await postBid(item.data.id, bid);
+      // Refresh the page or update the UI to reflect the new bid
+      window.location.reload();
+    } catch (error) {
+      console.error("Error placing bid", error);
+    }
+  });
 
   dropdownContainer.appendChild(dropdownToggle);
   dropdownContainer.appendChild(dropdownMenu);
@@ -138,4 +158,4 @@ export function listingTemplate(item) {
 
   parentContainer.appendChild(heading);
   parentContainer.appendChild(listingContainer);
-} 
+}
