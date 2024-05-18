@@ -68,6 +68,7 @@
                 class="form-control text-secondary rounded-3 border border-secondary bg-white"
                 required />
             </div>
+
             <div class="mb-3">
               <label for="" class="form-label text-secondary">Media</label>
               <div class="mb-3 input-group d-flex flex-wrap">
@@ -90,8 +91,8 @@
               <textarea
                 name="description"
                 class="form-control text-secondary rounded-3 border border-secondary bg-white"
-                required
-                title="Description cannot be greater than 280 characters"></textarea>
+                title="Description cannot be greater than 280 characters"
+                maxlength="280"></textarea>
             </div>
             <button type="submit" class="btn btn-secondary text-light rounded-4">Update Listing</button>
           </form>
