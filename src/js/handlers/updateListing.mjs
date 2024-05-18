@@ -22,14 +22,19 @@ export async function setUpdateListingFormListener() {
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
-      const form = event.target;
-      const formData = new FormData(form);
-      const updatedListing = Object.fromEntries(formData.entries());
-      updatedListing.id = id;
+      const formData = new FormData(form); // Use a different variable name here
+      const updatedListing = {
+        id: id,
+        title: formData.get("title"),
+        description: formData.get("description"),
+        media: [{
+          url: formData.get("mediaUrl"),
+          alt: formData.get("mediaAlt")
+        }]
+      };
 
       try {
         await updateListing(updatedListing);
-
         window.location.href = `/auction/?id=${id}`;
       } catch (error) {
         console.error("Error updating Listing", error);
