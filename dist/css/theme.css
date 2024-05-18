@@ -12,8 +12,13 @@
   max-width: 90px;
 }
 
-.top-image img {
-  max-width: 100%;
+.profileBanner {
+  width: 100%;
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
 }
 
 .btn-primary {
@@ -53,8 +58,9 @@
 }
 
 .avatar img {
-  width: 200px;
-  height: 200px;
+  max-width: 100%;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   object-fit: cover;
   object-position: 50% 50%;

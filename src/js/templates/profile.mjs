@@ -11,17 +11,17 @@ export function profileTemplate(profile) {
     listingContainer.classList.add("container", "col-11", "bg-secondary", "mb-4", "pb-4");
 
     const topContainer = document.createElement("div");
-    topContainer.classList.add("container", "col-11", "top-image", "mx-4");
+    topContainer.classList.add("container", "col-11");
 
-    const topImage = document.createElement("img");
-    topImage.src = profile.data.banner.url;
-    topImage.alt = profile.data.banner.alt;
-    topImage.className = "rounded-top-5";
+    const profileBanner = document.createElement("div");
+    profileBanner.classList.add("profileBanner");
 
-    topContainer.appendChild(topImage);
+    profileBanner.style.backgroundImage = `url('${profile.data.banner.url}')`;
+    profileBanner.style.backgroundSize = "cover";
+    topContainer.appendChild(profileBanner);
 
     const contentContainer = document.createElement("div");
-    contentContainer.classList.add("d-flex", "flex-wrap", "flex-lg-nowrap", "avatar");
+    contentContainer.classList.add("d-flex", "flex-wrap", "avatar");
 
     const img = document.createElement("img");
     img.src = profile.data.avatar.url;
@@ -30,7 +30,7 @@ export function profileTemplate(profile) {
     contentContainer.appendChild(img);
 
     const infoContainer = document.createElement("div");
-    infoContainer.classList.add("d-flex", "flex-column");
+    infoContainer.classList.add("d-flex", "flex-column", "align-items-center");
 
    const editBtn = document.createElement("button");
    editBtn.classList.add("btn", "btn-light", "text-secondary", "fw-bolder", "rounded-4");
@@ -50,7 +50,7 @@ export function profileTemplate(profile) {
     bidsInfoContainer.appendChild(credits);
 
     const description = document.createElement("p");
-    description.classList.add("mx-auto", "mt-3");
+    description.classList.add("mx-auto", "mt-3", "col-8");
     description.textContent = profile.data.bio;
 
     const historyDiv = activeListingsTemplate(profile);

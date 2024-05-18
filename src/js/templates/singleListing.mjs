@@ -70,7 +70,7 @@ export function listingTemplate(item) {
   const dropdownMenu = document.createElement("ul");
   dropdownMenu.classList.add("dropdown-menu");
 
-  let selectedBidAmount = highestBid + 1;  // Default to the first bid option
+  let selectedBidAmount = highestBid + 1;  
 
   const nextBidOptions = [highestBid + 1, highestBid + 5, highestBid + 10];
 
@@ -100,16 +100,30 @@ export function listingTemplate(item) {
     try {
       const bid = { amount: selectedBidAmount };
       await postBid(item.data.id, bid);
-      // Refresh the page or update the UI to reflect the new bid
       window.location.reload();
     } catch (error) {
       console.error("Error placing bid", error);
     }
   });
 
-  dropdownContainer.appendChild(dropdownToggle);
-  dropdownContainer.appendChild(dropdownMenu);
-  dropdownContainer.appendChild(submitButton);
+  const profile = JSON.parse(localStorage.getItem("profile"));
+  if (profile) {
+    if (profile.email !== item.data.seller.email) {
+      dropdownContainer.appendChild(dropdownToggle);
+      dropdownContainer.appendChild(dropdownMenu);
+      dropdownContainer.appendChild(submitButton);
+    } else {
+      const ownerMessage = document.createElement("p");
+      ownerMessage.textContent = "You cannot bid on your own listing.";
+      ownerMessage.classList.add("text-center", "fw-bolder","mt-4");
+      infoContainer.appendChild(ownerMessage);
+    }
+  } else {
+    const loginMessage = document.createElement("p");
+    loginMessage.textContent = "You need to be logged in to place a bid.";
+    loginMessage.classList.add("text-center", "fw-bolder","mt-4");
+    infoContainer.appendChild(loginMessage);
+  }
 
   const createdByDiv = document.createElement("div");
   createdByDiv.classList.add("d-flex", "customAvatar", "position-relative", "my-4", "me-4");
