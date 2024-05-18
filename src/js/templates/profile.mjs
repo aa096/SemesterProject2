@@ -32,6 +32,10 @@ export function profileTemplate(profile) {
     const infoContainer = document.createElement("div");
     infoContainer.classList.add("d-flex", "flex-column");
 
+   const editBtn = document.createElement("button");
+   editBtn.classList.add("btn", "btn-light", "text-secondary", "fw-bolder", "rounded-4");
+   editBtn.textContent = "Edit Profile"
+
     const bidsInfoContainer = document.createElement("div");
     bidsInfoContainer.classList.add("d-flex", "ms-4", "gap-3", "mt-3");
 
@@ -53,6 +57,7 @@ export function profileTemplate(profile) {
 
     infoContainer.appendChild(bidsInfoContainer);
     infoContainer.appendChild(description);
+    infoContainer.appendChild(editBtn)
 
     contentContainer.appendChild(infoContainer);
 
