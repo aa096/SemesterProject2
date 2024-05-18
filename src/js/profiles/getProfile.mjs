@@ -4,7 +4,6 @@ import * as utils from "../utils/index.mjs"
 import { load } from "../storage/load.mjs";
 
 const action = "/auction/profiles";
-// const action2 = "/posts";
 
 export async function getProfiles() {
   try {
@@ -25,10 +24,11 @@ export async function getProfiles() {
   }
 }
 
+
 export async function getProfile(profileData) {
   try {
     const profileName = load("profile");
-   utils.showLoadingIndicator();
+    utils.showLoadingIndicator();
 
     if (!profileData.name) {
       throw new Error("Get requires a name");
@@ -47,22 +47,23 @@ export async function getProfile(profileData) {
 }
 
 
-// export async function getProfilePost(profileData) {
-//   try {
-//     showLoadingIndicator();
+export async function getProfileName(name) {
+  try {
+    utils.showLoadingIndicator();
 
-//     if (!profileData.name) {
-//       throw new Error("Get requires a name");
-//     }
+    if (!name) {
+      throw new Error("Get requires a name");
+    }
 
-//     const getProfileURL = `${API_SOCIAL_URL}${action}/${profileData.name}${action2}?_author=true`;
+    const getProfileURL = `${API_AUCTION_URL}${action}/${name}`;
 
-//     const response = await authFetch(getProfileURL);
-//     hideLoadingIndicator();
+    const response = await authFetch(getProfileURL);
+    utils.hideLoadingIndicator();
 
-//     return await response.json();
-//   } catch (error) {
-//     hideLoadingIndicator();
-//     throw error;
-//   }
-// }
+    return await response.json();
+  } catch (error) {
+    utils.hideLoadingIndicator();
+    throw error;
+  }
+}
+
