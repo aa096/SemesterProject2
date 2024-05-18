@@ -76,6 +76,14 @@
   }
 }
 
+@include media-breakpoint-up(lg) {
+  .avatar {
+    img {
+      position: absolute;
+    }
+  }
+}
+
 .customI {
   bottom: 5px;
   right: 60px;

@@ -66,6 +66,11 @@
   object-position: 50% 50%;
 }
 
+@media (min-width: 992px) {
+  .avatar img {
+    position: absolute;
+  }
+}
 .customI {
   bottom: 5px;
   right: 60px;
