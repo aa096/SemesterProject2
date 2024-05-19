@@ -5,6 +5,13 @@
 
 The goal of this project is to leverage the skills learned over the past three semesters to create a fully functional auction website. The website will allow users to add items for auction and bid on items listed by other users.
 
+## Built With
+
+- HTML
+- Bootstrap
+- SCSS
+- JavaScript
+
 ## Getting Started
 
 ### Installing
