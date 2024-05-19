@@ -1,0 +1,161 @@
+.vertical-line {
+  border-left: 1.5px solid $secondary;
+  height: 160px;
+}
+
+.logoFoot {
+  img {
+    max-width: 90px;
+  }
+}
+
+.profileBanner {
+  width: 100%;
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.top-image {
+  img {
+    max-width: 100%;
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+}
+
+.btn-primary {
+  color: white;
+}
+
+.photo {
+  img {
+    object-position: 50% 50%;
+    height: 350px;
+    max-width: 300px;
+  }
+}
+
+.indexp {
+  img {
+    object-position: 50% 50%;
+    height: 250px;
+    max-width: 100%;
+    width: 200px;
+  }
+}
+
+.customImage {
+  img {
+    max-width: 100%;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .customImage {
+    img {
+      max-width: 500px;
+      height: max-content;
+    }
+  }
+}
+
+.customAvatar {
+  img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+}
+
+.history {
+  img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+}
+
+.avatar {
+  img {
+    max-width: 100%;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+}
+
+.scale {
+  img {
+    max-width: 100%;
+    width: 600px;
+    height: 350px;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .avatar {
+    img {
+      position: absolute;
+    }
+  }
+}
+
+.customI {
+  bottom: 5px;
+  right: 60px;
+}
+
+.error {
+  color: $secondary;
+  text-align: center;
+}
+
+.form-control:disabled {
+  cursor: not-allowed;
+}
+
+.loader-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 999;
+  margin-top: 200px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.loader {
+  border: 16px solid #333333;
+  border-top: 16px solid #aaaaaa;
+  background-color: none;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
