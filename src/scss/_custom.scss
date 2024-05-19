@@ -1,5 +1,5 @@
 .vertical-line {
-  border-left: 1.5px solid rgb(255, 255, 255);
+  border-left: 1.5px solid $secondary;
   height: 160px;
 }
 
@@ -16,6 +16,17 @@
   background-repeat: no-repeat;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
+}
+
+.top-image {
+  img {
+    max-width: 100%;
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
 }
 
 .btn-primary {

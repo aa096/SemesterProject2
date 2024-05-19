@@ -29,7 +29,7 @@ export async function getListings() {
     try {
       utils.showLoadingIndicator();
   
-      const getListingsLastURL = `${API_AUCTION_URL}${action}?page=1&limit=4&sort=endsAt&sortOrder=asc`;
+      const getListingsLastURL = `${API_AUCTION_URL}${action}?page=1&limit=4&sort=endsAt&sortOrder=asc&_active=true`;
   
       const response = await authFetch(getListingsLastURL, {
       });

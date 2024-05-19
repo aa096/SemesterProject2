@@ -11,7 +11,7 @@ export function listingTemplate(item) {
   heading.textContent = item.data.title;
 
   const listingContainer = document.createElement("div");
-  listingContainer.classList.add("container", "col-10", "bg-secondary", "mb-4", "pb-4");
+  listingContainer.classList.add("container", "col-10", "bg-info", "mb-4", "pb-4", "text-secondary");
 
   const contentContainer = document.createElement("div");
   contentContainer.classList.add("d-flex", "flex-wrap", "flex-lg-nowrap", "customImage", "justify-content-center");

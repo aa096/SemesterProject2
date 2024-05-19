@@ -1,19 +1,13 @@
-import * as storage from "../storage/index.mjs";
+import { remove } from "../storage/remove.mjs";
 
-document.addEventListener("DOMContentLoaded", function () {
-  const logoutLink = document.getElementById("logoutLink");
+function handleLogoutClick() {
+  remove("token");
+  remove("profile");
+}
 
+document.addEventListener('DOMContentLoaded', () => {
+  const logoutLink = document.getElementById('logoutLink');
   if (logoutLink) {
-    logoutLink.addEventListener("click", function (event) {
-      event.preventDefault();
-      handleLogout();
-    });
+      logoutLink.addEventListener('click', handleLogoutClick);
   }
 });
-
-export function handleLogout() {
-  storage.remove("token");
-  storage.remove("profile");
-
-  window.location.href = "/";
-}

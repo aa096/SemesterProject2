@@ -12,6 +12,7 @@ export function setLoginFormListener() {
       try {
         await login(profile);
         
+        window.location.href = "/profile";
       } catch (error) {
         console.error("Login error:", error);
       }

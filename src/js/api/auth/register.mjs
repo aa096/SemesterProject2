@@ -6,7 +6,6 @@ import { authFetch } from "../authFetch.mjs";
 const action = "/auth/register";
 const method = "POST";
 
-
 /**
  * Registers a new user by sending a POST request to the registration endpoint.
  *
@@ -22,7 +21,7 @@ const method = "POST";
  * @example
  * const newUserProfile = {
  *   username: 'newUser',
- *   email: 'newuser@example.com',
+ *   email: 'newuser@stud.noroff.no',
  *   password: 'newUserPassword',
  * };
  * try {

@@ -8,7 +8,7 @@ export function profileTemplate(profile) {
     heading.textContent = profile.data.name;
 
     const listingContainer = document.createElement("div");
-    listingContainer.classList.add("container", "col-11", "bg-secondary", "mb-4", "pb-4");
+    listingContainer.classList.add("container", "col-11", "bg-info", "mb-4", "pb-4");
 
     const topContainer = document.createElement("div");
     topContainer.classList.add("container", "col-11");
@@ -30,7 +30,7 @@ export function profileTemplate(profile) {
     contentContainer.appendChild(img);
 
     const infoContainer = document.createElement("div");
-    infoContainer.classList.add("d-flex", "align-items-center", "flex-column");
+    infoContainer.classList.add("d-flex", "align-items-center", "flex-column", "text-secondary");
 
    const editBtn = document.createElement("button");
    editBtn.classList.add("btn", "btn-light", "text-secondary", "fw-bolder", "rounded-4");

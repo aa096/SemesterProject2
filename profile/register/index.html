@@ -17,12 +17,12 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"></script>
   </head>
-  <body bg-primary>
+  <body>
     <header>
-      <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
+      <nav class="navbar navbar-expand-lg bg-primary text-secondary">
         <div class="container-fluid">
-          <a class="navbar-brand smaller" href="index.html"
-            ><img src="/images/NOLogo.png" alt="Noble Oak logo in white"
+          <a class="navbar-brand smaller" href="/"
+            ><img src="/images/NOLogo.png" alt="Noble Oak logo in black" class="my-3"
           /></a>
           <button
             class="navbar-toggler me-4"
@@ -32,21 +32,21 @@
             aria-controls="navbarToggler"
             aria-expanded="false"
             aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon text-secondary"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarToggler">
-            <ul class="navbar-nav container-fluid justify-content-evenly mb-2 mb-lg-0">
+          <div class="collapse navbar-collapse text-secondary" id="navbarToggler">
+            <ul class="navbar-nav container-fluid justify-content-evenly mb-2 mb-lg-0 text-secondary">
               <li class="nav-item">
-                <a class="nav-link active text-uppercase fs-5 navbar-override" aria-current="page" href="#">Home</a>
+                <a class="nav-link active text-uppercase fs-5 text-secondary" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-uppercase fs-5 text-light navbar-override" href="../profile/">Auctions</a>
+                <a class="nav-link text-uppercase fs-5 fw-bolder text-secondary" href="/auctions/">Auctions</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-uppercase fs-5 text-light navbar-override" id="logoutLink" href="/">Sell</a>
+                <a class="nav-link text-uppercase fs-5 text-secondary" id="logoutLink" href="/auctions/create">Sell</a>
               </li>
             </ul>
-            <a href=""><i class="fa-solid fa-user fs-2 me-3"></i></a>
+            <a href="" id="proBtn"><i class="fa-solid fa-user fs-2 me-3 text-secondary"></i></a>
           </div>
         </div>
       </nav>
@@ -76,7 +76,7 @@
               id="Email"
               required
               pattern="^[\w\-.]+@stud\.noroff\.no$"
-              title="Only @stud.noroff.no domains are allowed to login" />
+              title="Only @stud.noroff.no domains are allowed to register" />
           </div>
           <div class="mb-2">
             <label for="Password" class="form-label text-secondary">Password *</label>
@@ -88,20 +88,6 @@
               required
               minlength="8" />
           </div>
-          <!-- <div class="mb-2">
-            <label for="Banner" class="form-label text-secondary">Banner-Url</label>
-            <input
-              type="url"
-              name="banner"
-              class="form-control text-secondary rounded-3 border border-secondary bg-white" />
-          </div>
-          <div class="mb-2">
-            <label for="Avatar" class="form-label text-secondary">Avatar-Url</label>
-            <input
-              type="url"
-              name="avatar"
-              class="form-control text-secondary rounded-3 border border-secondary bg-white" />
-          </div> -->
           <div class="d-flex justify-content-evenly">
             <p class="text-secondary">Already a member?</p>
             <a href="/profile/login/" class="text-secondary text-uppercase">Log in Here</a>
@@ -113,19 +99,19 @@
       </section>
     </main>
     <footer>
-      <div class="container-expand bg-primary pt-3">
+      <div class="container-expand bg-primary pt-5 text-secondary">
         <div class="d-flex justify-content-center py-4">
           <nav class="nav flex-column">
-            <a class="nav-link fw-bolder" aria-current="page" href="#">Home</a>
-            <a class="nav-link fw-bold" href="#">Auctions</a>
-            <a class="nav-link fw-bold" href="#">About</a>
-            <a class="nav-link fw-bold" href="#">Log out</a>
+            <a class="nav-link fw-bold text-secondary" href="/">Home</a>
+            <a class="nav-link fw-bold text-secondary" href="/auctions/">Auctions</a>
+            <a class="nav-link fw-bolder text-secondary" href="/about/">About</a>
+            <a class="nav-link fw-bold text-secondary" id="logout" href="#">Log out</a>
           </nav>
-          <div class="vertical-line"></div>
+          <div class="vertical-line me-3"></div>
           <div class="nav flex-column">
-            <i class="fa-brands fa-x-twitter nav-link py-2 fs-3"></i>
-            <i class="fa-brands fa-instagram nav-link py-2 fs-3"></i>
-            <i class="fa-brands fa-facebook nav-link py-2 fs-3"></i>
+            <i class="fa-brands fa-x-twitter text-secondarynav-link py-2 fs-3"></i>
+            <i class="fa-brands fa-instagram text-secondarynav-link py-2 fs-3"></i>
+            <i class="fa-brands fa-facebook text-secondarynav-link py-2 fs-3"></i>
           </div>
         </div>
         <div class="text-center pb-3">
