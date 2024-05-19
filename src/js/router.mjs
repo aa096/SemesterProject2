@@ -25,7 +25,8 @@ export function router() {
       return;
     case "/auctions/":
       UI.showListings();
-      listners.handleCreateListingButtonClick()
+      listners.handleCreateListingButtonClick();
+      listners.setupSearchListener();
       return;
     case "/auction/":
         UI.displaySingleListing();
@@ -34,7 +35,9 @@ export function router() {
       UI.showProfile();
       return;
     case "/":
-      UI.displayIndexTemplate();
+      const postId = "67561f39-fd99-4c8e-8c45-2d5e653b30a1"; 
+      UI.displayIndexTemplate(postId);
+      UI.displayLastChance();
       return;
   }
 }

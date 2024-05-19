@@ -31,6 +31,13 @@
   max-width: 300px;
 }
 
+.indexp img {
+  object-position: 50% 50%;
+  height: 250px;
+  max-width: 100%;
+  width: 200px;
+}
+
 .customImage img {
   max-width: 100%;
 }
@@ -62,6 +69,14 @@
   width: 250px;
   height: 250px;
   border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.scale img {
+  max-width: 100%;
+  width: 600px;
+  height: 350px;
   object-fit: cover;
   object-position: 50% 50%;
 }

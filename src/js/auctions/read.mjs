@@ -25,6 +25,47 @@ export async function getListings() {
     }
   }
 
+  export async function getListingsLastChance() {
+    try {
+      utils.showLoadingIndicator();
+  
+      const getListingsLastURL = `${API_AUCTION_URL}${action}?page=1&limit=4&sort=endsAt&sortOrder=asc`;
+  
+      const response = await authFetch(getListingsLastURL, {
+      });
+  
+      if (!response.ok) {
+        throw new Error("Error, unable to fetch listings");
+      }
+      utils.hideLoadingIndicator();
+  
+      return await response.json();
+    } catch (error) {
+      utils.hideLoadingIndicator();
+      throw error;
+    }
+  }
+
+  export async function getListingsByTag() {
+    try {
+      utils.showLoadingIndicator();
+  
+      const getListingsByTagURL = `${API_AUCTION_URL}${action}?_tag= ownedByMe&page=1&limit=20&_active=true`;
+  
+      const response = await authFetch(getListingsByTagURL, {
+      });
+  
+      if (!response.ok) {
+        throw new Error("Error, unable to fetch listings");
+      }
+      utils.hideLoadingIndicator();
+  
+      return await response.json();
+    } catch (error) {
+      utils.hideLoadingIndicator();
+      throw error;
+    }
+  }
 
 export async function getListing(id) {
   try {

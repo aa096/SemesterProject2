@@ -1,21 +1,23 @@
 import * as templates from "../templates/index.mjs"
-import { getListings } from "../auctions/read.mjs";
-import * as utils from "../utils/index.mjs"
+import { getListing } from "../auctions/read.mjs";
+import { getListingsLastChance } from "../auctions/read.mjs";
+import * as utils from "../utils/index.mjs";
 
-export async function displayIndexTemplate(item) {
-  try {
-    const item = await getListings();
-  
-    for (let i = 0; i < items.length; i++) {
-        const listing = items[i];
-
-       if (listing.id && listing.id.includes("67561f39-fd99-4c8e-8c45-2d5e653b30a1")) {
-            templates.indexTemplate(item);
-        }
+export async function displayIndexTemplate(postId) {
+    try {
+        const featured = await getListing(postId);
+        templates.indexTemplate(featured)
+    } catch (error) {
+        utils.showError(error.message, "#featured");
     }
-
-  } catch (error) {
-    utils.showError(error.message, "#featured");
-  }
 }
 
+export async function displayLastChance() {
+    try {
+      const items = await getListingsLastChance();
+      templates.renderListingsTemplatesLast(items) ;
+    } catch (error) {
+      utils.showError(error.message, "#last-container");
+    }
+  }
+  
