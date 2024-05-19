@@ -1,0 +1,53 @@
+{
+  "name": "SemesterProject2",
+  "version": "0.0.1",
+  "description": "Semester Project 2, an auction site called Nobel Oak Auction",
+  "scripts": {
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css & live-server",
+    "start": "npm run build && live-server",
+    "prepare": "husky install",
+    "lint": "eslint src/**/*.js",
+    "test": "npm run test-unit && npm run test-e2e",
+    "test-unit": "jest",
+    "test-e2e": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aa096/SemesterProject2"
+  },
+  "keywords": [],
+  "author": "aa096",
+  "homepage": "https://github.com/aa096/SemesterProject2#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.4",
+    "@eslint/js": "^9.2.0",
+    "cypress": "^13.8.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-cypress": "^3.2.0",
+    "eslint-plugin-jest": "^28.5.0",
+    "globals": "^15.1.0",
+    "husky": "^9.0.11",
+    "jest": "^29.2.0",
+    "lint-staged": "^15.2.2",
+    "live-server": "^1.2.2",
+    "prettier": "^3.2.5",
+    "sass": "^1.77.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ]
+  }
+}
