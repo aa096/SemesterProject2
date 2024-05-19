@@ -1,6 +1,6 @@
 export * from "./login.mjs";
 export * from "./register.mjs";
-export * from "./logout.mjs";
+export * from "./handleLogout.mjs";
 export * from "./createListing.mjs";
 export * from "./createListingBtn.mjs";
 export * from "./updateListing.mjs";
