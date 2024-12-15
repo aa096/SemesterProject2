@@ -45,7 +45,7 @@ export function router() {
       return;
     case "/":
       const postId = "67561f39-fd99-4c8e-8c45-2d5e653b30a1"; 
-      UI.displayIndexTemplate(postId);
+      UI.displayIndexTemplate(postId) ;
       UI.displayLastChance();
       profileBtn.addEventListener("click", listners.handleProfileLinkClick());
       return;

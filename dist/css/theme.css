@@ -90,11 +90,18 @@
   object-position: 50% 50%;
 }
 
+.ind img {
+  max-width: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
 @media (min-width: 992px) {
   .avatar img {
     position: absolute;
   }
 }
+
 .customI {
   bottom: 5px;
   right: 60px;
