@@ -7,7 +7,7 @@ export function listingsTemplate(item) {
     divWrapper.classList.add("col-sm", "text-center", "text-secondary");
 
     const listingsCard = document.createElement("div");
-    listingsCard.classList.add("text-center", "photo");
+    listingsCard.classList.add("text-center", "photo", "ms-6");
 
     const idLink = document.createElement("a");
     idLink.href = "/auction/?id=" + item.id;

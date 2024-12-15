@@ -9,7 +9,7 @@ export function indexTemplate() {
     listingDiv.classList.add("container", "d-flex", "flex-wrap", "align-items-center", "justify-content-center", "ind");
 
     const imageColumn = document.createElement("div");
-    imageColumn.classList.add("col-md-8", "p-4");
+    imageColumn.classList.add("col-md-8", "pt-4");
 
     const image = document.createElement("img");
     image.classList.add("img-fluid", "mb-4");
@@ -19,7 +19,7 @@ export function indexTemplate() {
     imageColumn.appendChild(image);
 
     const contentColumn = document.createElement("div");
-    contentColumn.classList.add("col", "text-secondary", "text-center", "fw-bolder", "pl-12");
+    contentColumn.classList.add("col", "text-secondary", "text-center", "fw-bolder", "pl-4");
 
     const title = document.createElement("h2");
     title.classList.add("text-uppercase");
